@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:todo/pages/todo_item.dart';
 
-class TodoList extends StatelessWidget {
-  TodoList({super.key});
+class TodoList extends StatefulWidget {
+  const TodoList({super.key});
 
+  @override
+  State<TodoList> createState() => _TodoListState();
+}
+
+class _TodoListState extends State<TodoList> {
   final names = ["Ana", "Juan", "Carlos"];
+
   void add(String task) {
-    print(task);
-    names.add(task);
+    setState(() {
+      names.add(task);
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
