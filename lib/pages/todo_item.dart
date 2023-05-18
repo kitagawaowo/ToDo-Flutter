@@ -16,6 +16,7 @@ class TodoItem extends StatelessWidget {
         children: [
           //Text("hi"),
           TextField(
+            controller: TextEditingController(text: newTask),
             onChanged: (value) {
               newTask = value;
             },
